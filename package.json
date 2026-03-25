@@ -1,0 +1,34 @@
+{
+  "name": "inkrise-assets",
+  "version": "1.0.0",
+  "description": "Asset pipeline for InkRise",
+  "main": "static/src/main.jsx",
+  "scripts": {
+    "build": "esbuild static/src/main.jsx --bundle --sourcemap --outdir=static/dist",
+    "dev": "esbuild static/src/main.jsx --bundle --outdir=static/dist --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cempack/InkRise.git"
+  },
+  "keywords": [],
+  "author": "InkRise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cempack/InkRise/issues"
+  },
+  "homepage": "https://github.com/cempack/InkRise#readme",
+  "dependencies": {
+    "@xyflow/react": "^12.10.1",
+    "cropperjs": "^1.5.13",
+    "cytoscape": "^3.33.1",
+    "cytoscape-edgehandles": "^4.0.1",
+    "esbuild": "^0.27.3",
+    "quill": "^2.0.3",
+    "react": "^19.2.4",
+    "react-cropper": "^2.3.3",
+    "react-dom": "^19.2.4",
+    "react-rnd": "^10.5.3",
+    "react-router-dom": "^7.13.1"
+  }
+}

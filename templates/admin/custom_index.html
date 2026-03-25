@@ -1,0 +1,13 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<div class="module" style="margin-bottom: 18px;">
+  <table style="width: auto;">
+    <caption>
+      <a href="{% url 'staff_console' %}">InkRise — Console équipe</a>
+      <span style="color: #666; font-weight: normal;"> — compteurs et raccourcis</span>
+    </caption>
+  </table>
+</div>
+{{ block.super }}
+{% endblock %}

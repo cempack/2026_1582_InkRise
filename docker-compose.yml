@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-inkrise}
+      POSTGRES_USER: ${POSTGRES_USER:-inkrise}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-inkrise}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-inkrise} -d ${POSTGRES_DB:-inkrise}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DJANGO_DEBUG: ${DJANGO_DEBUG:-1}
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-inkrise-local-secret}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1,0.0.0.0}
+      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-http://localhost:8000,http://127.0.0.1:8000}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-inkrise}
+      POSTGRES_USER: ${POSTGRES_USER:-inkrise}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-inkrise}
+      SERVE_MEDIA: ${SERVE_MEDIA:-1}
+    ports:
+      - "8000:8000"
+    volumes:
+      - inkrise_media:/app/media
+
+volumes:
+  postgres_data:
+  inkrise_media:

@@ -59,30 +59,6 @@ python3 manage.py runserver
 
 Les variables importantes sont décrites dans **`.env.example`** : `DJANGO_SECRET_KEY`, `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, identifiants PostgreSQL et option SMTP pour la réinitialisation de mot de passe.
 
----
-
-## ![Check](docs/assets/check.svg) Captures d’écran
-
-Placez vos images dans **`docs/screenshots/`**, puis décommentez ou remplacez les exemples ci-dessous.
-
-### ![Pencil](docs/assets/pencil.svg) Espace de travail / éditeur
-
-<!-- ![Espace de travail](docs/screenshots/workspace.png) -->
-
-### ![Users](docs/assets/users.svg) Personnages
-
-<!-- ![Personnages](docs/screenshots/characters.png) -->
-
-### ![Code](docs/assets/code.svg) Dictionnaire
-
-<!-- ![Dictionnaire](docs/screenshots/dictionary.png) -->
-
-### ![Sun](docs/assets/sun.svg) Tableau de bord
-
-<!-- ![Tableau de bord](docs/screenshots/dashboard.png) -->
-
----
-
 ## ![Package](docs/assets/package.svg) Structure du projet
 
 | Chemin                     | Rôle                                       |

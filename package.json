@@ -2,10 +2,10 @@
   "name": "inkrise-assets",
   "version": "1.0.0",
   "description": "Asset pipeline for InkRise",
-  "main": "static/src/main.jsx",
+  "main": "src/static/src/main.jsx",
   "scripts": {
-    "build": "esbuild static/src/main.jsx --bundle --sourcemap --outdir=static/dist",
-    "dev": "esbuild static/src/main.jsx --bundle --outdir=static/dist --watch"
+    "build": "esbuild src/static/src/main.jsx --bundle --sourcemap --outdir=src/static/dist",
+    "dev": "esbuild src/static/src/main.jsx --bundle --outdir=src/static/dist --watch"
   },
   "repository": {
     "type": "git",

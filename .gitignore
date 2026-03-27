@@ -208,9 +208,9 @@ __marimo__/
 
 # Node / project build artifacts
 node_modules/
-static/dist/
-staticfiles/
-media/
+src/static/dist/
+src/staticfiles/
+src/media/
 
 # Deploy state (rollback tracking, local to VPS)
 .deploy-state*

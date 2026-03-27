@@ -38,7 +38,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - inkrise_media:/app/media
+      - inkrise_media:/app/src/media
 
 volumes:
   postgres_data:

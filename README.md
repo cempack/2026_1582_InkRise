@@ -61,14 +61,14 @@ Les variables importantes sont décrites dans **`.env.example`** : `DJANGO_SECRE
 
 ## ![Package](docs/assets/package.svg) Structure du projet
 
-| Chemin                     | Rôle                                       |
-| :------------------------- | :----------------------------------------- |
-| `inkrise/`                 | Paramètres du projet Django et URLs racine |
-| `studio/`                  | Modèles, vues, API, services, tests        |
-| `templates/react_app.html` | Enveloppe qui monte l’application React    |
-| `static/src/`              | Sources React et Quill                     |
-| `docker-compose.yml`       | Application + PostgreSQL en local          |
-| `docs/assets/`             | Icônes et ressources de présentation       |
+| Chemin                          | Rôle                                       |
+| :------------------------------ | :----------------------------------------- |
+| `src/inkrise/`                  | Paramètres du projet Django et URLs racine |
+| `src/studio/`                   | Modèles, vues, API, services, tests        |
+| `src/templates/react_app.html` | Enveloppe qui monte l’application React    |
+| `src/static/src/`               | Sources React et Quill                     |
+| `docker-compose.yml`            | Application + PostgreSQL en local          |
+| `docs/assets/`                  | Icônes et ressources de présentation       |
 
 ---
 

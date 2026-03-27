@@ -7,14 +7,15 @@ COPY package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm \
     npm ci
 
-COPY static/src ./static/src
+COPY src/static/src ./src/static/src
 RUN npm run build
 
 
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app/src
 
 WORKDIR /app
 
@@ -36,8 +37,10 @@ COPY requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
-COPY . .
-COPY --from=assets /app/static/dist /app/static/dist
+COPY manage.py ./
+COPY docker/ ./docker/
+COPY src/ ./src/
+COPY --from=assets /app/src/static/dist ./src/static/dist
 
 RUN chmod +x /app/docker/entrypoint.sh
 
